@@ -17,12 +17,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Header />
-        <Hero />
+        {/* <Hero /> */}
         <main>
           {children}
-          <Contact />
+          {/* <Contact /> */}
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   )
