@@ -1,9 +1,9 @@
 import Link from 'next/link'
 
 export default function Product({ product }) {
-  const productPrice = Math.floor(product.price/100)
-  const discountPercentage = Math.floor(product.discountPercentage) * productPrice;
-  const afterDiscountPrice = product.price - discountPercentage
+  const productPrice = Math.floor(product?.price/100)
+  const discountPercentage = Math.floor(product?.discountPercentage) * productPrice;
+  const afterDiscountPrice = product?.price - discountPercentage
   // console.log(afterDiscountPrice);
   return (
     <div>
