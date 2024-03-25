@@ -16,6 +16,11 @@ export default function SingleProduct({ params: { productId } }) {
     setThumbnail(img)
   }
 
+  const productPrice = Math.floor(product.price / 100);
+  const discountPercentage =
+    Math.floor(product.discountPercentage) * productPrice;
+  const afterDiscountPrice = product.price - discountPercentage;
+
   return (
     <main className="h-screen">
       <section className="bg-[#fafaf2] h-full py-20">
@@ -71,14 +76,14 @@ export default function SingleProduct({ params: { productId } }) {
                 <span className="text-rose-600 opacity-60 line-through">
                   ${product?.price}
                 </span>
-                <span className="font-bold text-2xl">$195.00</span>
+                <span className="font-bold text-2xl">${afterDiscountPrice}</span>
               </p>
             </div>
             <div>
               <p className="leading-7">{product.description}</p>
 
               <button className="w-full bg-[#1a1a1a] hover:bg-[#3a3a3a] text-center py-3 mt-5 text-white rounded-full">
-                Add To Cart - $195
+                Add To Cart - ${afterDiscountPrice}
               </button>
             </div>
           </div>
